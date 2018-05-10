@@ -1,0 +1,10 @@
+.gradle/
+.idea/
+.DS_Store
+*/.DS_Store
+build/
+*.iml
+*.ipr
+*.iws
+application-prod.yaml
+with-spring-boot/out/
