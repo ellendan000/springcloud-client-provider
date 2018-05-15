@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: hello-cloud
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:11111/eureka, http://peer2:11112/eureka

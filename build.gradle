@@ -12,14 +12,10 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
-ext {
-    name = 'Eureka Server'
-    description = 'Eureka Server demo project'
-    version='0.0.1-SNAPSHOT'
-    sourceEncoding='UTF-8'
-}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     jcenter()
