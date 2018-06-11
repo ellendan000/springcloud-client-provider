@@ -1,0 +1,25 @@
+management:
+  context-path: /actuator
+  security:
+    enabled: false
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+    time-to-live: 10000
+  info:
+    enabled: true
+
+security:
+  basic:
+    enabled: true
+    authorize-mode: role
+  user:
+    name: admin
+    password: secret
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:7001
+
