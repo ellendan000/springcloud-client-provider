@@ -3,12 +3,8 @@ management:
   security:
     enabled: false
 endpoints:
-  enabled: false
-  health:
-    enabled: true
-    time-to-live: 10000
-  info:
-    enabled: true
+  shutdown:
+    enabled: false
 
 security:
   basic:
