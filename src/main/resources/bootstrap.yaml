@@ -17,6 +17,16 @@ security:
 spring:
   cloud:
     config:
-      uri: http://localhost:7001
+#      uri: http://localhost:7001
+      discovery:
+        enabled: true
+        service-id: config-server
       fail-fast: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:11111/eureka
+    fetch-registry: true
+    register-with-eureka: true
 

@@ -3,13 +3,6 @@ server:
 
 spring:
   application:
-    name: hello-cloud
+    name: ms-provider
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:local}
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:11111/eureka
-    healthcheck:
-      enabled: true
