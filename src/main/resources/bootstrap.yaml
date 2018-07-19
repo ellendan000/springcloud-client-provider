@@ -14,14 +14,14 @@ security:
     name: admin
     password: secret
 
-spring:
-  cloud:
-    config:
+#spring:
+#  cloud:
+#    config:
 #      uri: http://localhost:7001
-      discovery:
-        enabled: true
-        service-id: config-server
-      fail-fast: true
+#      discovery:
+#        enabled: true
+#        service-id: config-server
+#      fail-fast: true
 
 eureka:
   client:

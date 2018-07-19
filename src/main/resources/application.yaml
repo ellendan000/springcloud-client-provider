@@ -6,3 +6,5 @@ spring:
     name: ms-provider
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:local}
+
+from: internal-1.0
