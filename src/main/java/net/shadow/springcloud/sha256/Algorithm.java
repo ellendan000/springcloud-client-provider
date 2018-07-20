@@ -1,6 +1,6 @@
 package net.shadow.springcloud.sha256;
 
-public class Algorithm {
+class Algorithm {
 
     private long[] k64 = new long[]{
             0x428a2f98L, 0x71374491L, 0xb5c0fbcfL, 0xe9b5dba5L,
@@ -67,9 +67,7 @@ public class Algorithm {
 
         long[] row = new long[16];
         for (int i = 0; i < groups; i++) {
-            for (int j = 0; j < 16; j++) {
-                row[j] = word[(i * 16) + j];
-            }
+            System.arraycopy(word, i * 16, row, 0, 16);
             compress(row);
         }
     }
@@ -84,9 +82,7 @@ public class Algorithm {
 
     private long[] deal(long[] m16) {
         long[] word64 = new long[64];
-        for (int i = 0; i < 16; i++) {
-            word64[i] = m16[i];
-        }
+        System.arraycopy(m16, 0, word64, 0, 16);
         for (int i = 16; i < 64; i++) {
             word64[i] = (SSigma_1(word64[i - 2]) + word64[i - 7] + SSigma_0(word64[i - 15]) + word64[i - 16]) & 0xFFFFFFFFL;
         }
