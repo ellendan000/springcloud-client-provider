@@ -1,4 +1,4 @@
-package net.shadow.springcloud;
+package net.shadow.springcloud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
