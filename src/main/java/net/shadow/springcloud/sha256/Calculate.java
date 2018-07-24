@@ -1,9 +1,11 @@
 package net.shadow.springcloud.sha256;
 
 import com.google.common.hash.Hashing;
+import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;
 
+@Slf4j
 public class Calculate {
 
     private static String guavaSHA256(String originalString) {
@@ -13,10 +15,10 @@ public class Calculate {
     }
 
     public static void main(String[] args) {
-        System.out.println(guavaSHA256("´ÓÇ°ÓĞ×ùÉ½£¬É½ÉÏÓĞ¸öÃí"));
+        log.info(guavaSHA256("ä»å‰æœ‰åº§å±±ï¼Œå±±ä¸Šæœ‰ä¸ªåº™"));
 
         Algorithm algorithm = new Algorithm();
-        byte[] input = "´ÓÇ°ÓĞ×ùÉ½£¬É½ÉÏÓĞ¸öÃí".getBytes(StandardCharsets.UTF_8);
+        byte[] input = "ä»å‰æœ‰åº§å±±ï¼Œå±±ä¸Šæœ‰ä¸ªåº™".getBytes(StandardCharsets.UTF_8);
         algorithm.PAD(input);
     }
 }

@@ -1,5 +1,6 @@
 package net.shadow.springcloud.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.serviceregistry.Registration;
@@ -9,14 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.MessageFormat;
-import java.util.logging.Logger;
 
+@Slf4j
 @RefreshScope
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
-    private final Logger logger = Logger.getLogger(getClass().getName());
-
     @Value("${from}")
     private String from;
 
@@ -25,7 +24,7 @@ public class HelloController {
 
     @GetMapping("/registration")
     public String index(){
-        logger.info(MessageFormat.format("/hello, host: {0}, service_id: {1}",
+        log.info(MessageFormat.format("/hello, host: {0}, service_id: {1}",
                 registration.getHost(), registration.getServiceId()));
         return "hello cloud";
     }
